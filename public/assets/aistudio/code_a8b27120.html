@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#05070A] antialiased" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORION — Personal Intelligence</title>
+<!-- Google Fonts: Sora & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;family=Sora:wght@200;300;400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: '#05070A',
+            graphite: '#161C25',
+            'silver-dark': '#687481',
+            'silver-light': '#C7D0D9',
+            'cold-white': '#F2F6FA',
+            'platinum-dim': '#8795A6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            sora: ['Sora', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Glass & Ambient Styles -->
+<style data-purpose="custom-ambience">
+    /* Subtle radial atmospheric glow behind the sculpture */
+    .ambient-atmosphere {
+      background: radial-gradient(circle at 50% 45%, rgba(232, 238, 245, 0.04) 0%, rgba(5, 7, 10, 0.8) 55%, #05070A 100%);
+    }
+
+    /* Precision subtle borders */
+    .subtle-border {
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .subtle-border-light {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Soundwave equalization micro-animation */
+    @keyframes equalizer {
+      0%, 100% { height: 3px; }
+      50% { height: 14px; }
+    }
+    .eq-bar-1 { animation: equalizer 1.1s ease-in-out infinite; }
+    .eq-bar-2 { animation: equalizer 1.4s ease-in-out infinite 0.2s; }
+    .eq-bar-3 { animation: equalizer 0.9s ease-in-out infinite 0.4s; }
+    .eq-bar-4 { animation: equalizer 1.3s ease-in-out infinite 0.1s; }
+
+    /* Custom subtle scrollbar just in case */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+    }
+  </style>
+<!-- END: Custom Glass & Ambient Styles -->
+</head>
+<body class="h-full w-full bg-[#05070A] text-[#C7D0D9] font-sans overflow-x-hidden selection:bg-white/10 selection:text-white">
+<!-- BEGIN: MainContainer -->
+<div class="relative w-full min-h-screen flex ambient-atmosphere overflow-hidden">
+<!-- BEGIN: LeftSidebarNav -->
+<aside class="w-16 flex-shrink-0 flex flex-col justify-between items-center py-6 border-r border-white/[0.05] bg-[#05070A]/80 backdrop-blur-xl z-30" data-purpose="vertical-navigation">
+<!-- Logo Mark / Top Icon -->
+<div class="flex items-center justify-center">
+<a aria-label="ORION Home" class="group relative flex items-center justify-center w-10 h-10 rounded-xl hover:bg-white/[0.03] transition-all duration-300" href="#">
+<svg class="w-6 h-6 text-[#F2F6FA] opacity-90 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+<!-- Minimal Orbital Geometric Mark -->
+<circle cx="12" cy="12" r="8" stroke-dasharray="3 2"></circle>
+<circle cx="12" cy="12" r="3" stroke-width="1.5"></circle>
+<path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round"></path>
+</svg>
+</a>
+</div>
+<!-- Primary Vertical Action Icons -->
+<nav class="flex flex-col gap-6 items-center" data-purpose="nav-items">
+<!-- Home (Active) -->
+<a aria-label="Início" class="group relative flex items-center justify-center w-10 h-10 rounded-lg text-[#F2F6FA] bg-white/[0.04] transition-all duration-200" href="#">
+<!-- Active Line Indicator -->
+<span class="absolute left-0 top-2 bottom-2 w-[2px] bg-[#F2F6FA] rounded-r-full shadow-[0_0_8px_rgba(242,246,250,0.8)]"></span>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</a>
+<!-- Music -->
+<a aria-label="Música" class="group relative flex items-center justify-center w-10 h-10 rounded-lg text-[#687481] hover:text-[#C7D0D9] hover:bg-white/[0.02] transition-all duration-200" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24">
+<path d="M9 18V5l12-2v13"></path>
+<circle cx="6" cy="18" r="3"></circle>
+<circle cx="18" cy="16" r="3"></circle>
+</svg>
+</a>
+<!-- Alarm / Clock -->
+<a aria-label="Despertador" class="group relative flex items-center justify-center w-10 h-10 rounded-lg text-[#687481] hover:text-[#C7D0D9] hover:bg-white/[0.02] transition-all duration-200" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24">
+<circle cx="12" cy="13" r="8"></circle>
+<path d="M12 9v4l2 2"></path>
+<path d="M5 3 2 6"></path>
+<path d="m22 6-3-3"></path>
+<path d="M6.38 18.7 4 21"></path>
+<path d="M17.64 18.67 20 21"></path>
+</svg>
+</a>
+<!-- Devices -->
+<a aria-label="Dispositivos" class="group relative flex items-center justify-center w-10 h-10 rounded-lg text-[#687481] hover:text-[#C7D0D9] hover:bg-white/[0.02] transition-all duration-200" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24">
+<rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+<line x1="12" x2="12.01" y1="18" y2="18"></line>
+</svg>
+</a>
+<!-- Settings -->
+<a aria-label="Configurações" class="group relative flex items-center justify-center w-10 h-10 rounded-lg text-[#687481] hover:text-[#C7D0D9] hover:bg-white/[0.02] transition-all duration-200" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 24 24">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</a>
+</nav>
+<!-- Bottom Presence / Status Indicator -->
+<div class="flex flex-col items-center gap-1.5" data-purpose="presence-status" title="Conexão neural ativa">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#F2F6FA]"></span>
+</span>
+</div>
+</aside>
+<!-- END: LeftSidebarNav -->
+<!-- BEGIN: MainContentWrapper -->
+<div class="relative flex-1 flex flex-col justify-between min-h-screen px-8 lg:px-12 py-7 z-20">
+<!-- BEGIN: MainHeader -->
+<header class="flex items-start justify-between w-full" data-purpose="top-header">
+<!-- Brand identity -->
+<div class="flex flex-col">
+<div class="flex items-center gap-3">
+<span class="font-sora text-sm font-semibold tracking-[0.25em] text-[#F2F6FA] uppercase">ORION</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-white/20"></span>
+<span class="text-[10px] font-mono tracking-[0.3em] text-[#687481] uppercase">Personal Intelligence</span>
+</div>
+<span class="text-[11px] text-[#687481]/80 tracking-wider mt-0.5">Ambiente Sensorial Autônomo</span>
+</div>
+<!-- Clock, Date and System Status -->
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-[#161C25]/50 subtle-border text-[10px] font-mono text-[#687481] tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F2F6FA]/80"></span>
+<span>ORION OS V4.2 • SISTEMA ATIVO</span>
+</div>
+<div class="text-right">
+<div class="text-xl sm:text-2xl font-light font-sora tracking-widest text-[#F2F6FA]">23:42</div>
+<div class="text-[10px] font-mono tracking-[0.2em] text-[#687481] uppercase">TER, 24 OUT</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: CentralSculpturalCore -->
+<main class="flex-1 flex flex-col items-center justify-center my-auto py-2 relative" data-purpose="intelligence-core">
+<!-- The Core Visual Asset: strictly integrated per instruction -->
+<div class="w-full flex justify-center items-center relative">
+<!-- Ambient soft caustic glow behind the image -->
+<div class="absolute w-[500px] h-[300px] bg-white/[0.025] blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<img alt="ORION Artificial Intelligence Sculptural Core" class="w-full max-w-4xl object-contain mx-auto mix-blend-screen drop-shadow-[0_0_50px_rgba(232,238,245,0.15)] pointer-events-none select-none transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1Wd_ra69V54grfm7uQnwqUwSJyn6t5cSCG0w_peswxlgTtj5tA0A5QcccY-dVaNNkSGHrETQhF0emaG5fvQsQ7EMIRxoZEwG8hz8m8Ty8Y31oitOnwrmi6eN6mXDtYI8LqrCIedc0cS1SGMb8hG1F4glwYOretLu-lCm5y0GWfe8AGPXOeU512kluiB4jBLpK9RaF1seyOYSzQ5oA2xii5myQ0V5e4iRqzXmPhSgw"/>
+</div>
+<!-- Contextual Calm Greeting -->
+<div class="text-center mt-2 z-10 select-none">
+<h1 class="text-2xl sm:text-3xl font-light font-sora text-[#F2F6FA] tracking-wide mb-1.5">
+            Boa noite.
+          </h1>
+<p class="text-xs sm:text-sm font-normal text-[#8795A6] tracking-wider">
+            Estou aqui quando precisar.
+          </p>
+</div>
+</main>
+<!-- END: CentralSculpturalCore -->
+<!-- BEGIN: BottomDeck (Widgets + Floating Conversational Input) -->
+<div class="w-full flex flex-col gap-6 pt-2" data-purpose="bottom-interaction-layer">
+<!-- Center-floating Conversational Pill -->
+<div class="w-full flex justify-center items-center">
+<div class="w-full max-w-2xl backdrop-blur-2xl bg-[#161C25]/70 subtle-border hover:border-white/20 transition-all duration-300 rounded-full shadow-[0_10px_35px_rgba(0,0,0,0.6)] px-3 py-2 flex items-center gap-3">
+<!-- Voice Input Trigger -->
+<button aria-label="Ativar microfone" class="w-9 h-9 rounded-full flex items-center justify-center text-[#C7D0D9] hover:text-white hover:bg-white/[0.06] transition-all flex-shrink-0" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+<path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+<line x1="12" x2="12" y1="19" y2="22"></line>
+</svg>
+</button>
+<!-- Text Input Field -->
+<input class="w-full bg-transparent border-0 focus:ring-0 text-sm text-[#F2F6FA] placeholder-[#687481] tracking-wide py-1 px-1 font-sans focus:outline-none" placeholder="Converse com Orion ou faça uma solicitação..." type="text"/>
+<!-- Operational Mode Badge -->
+<span class="hidden sm:inline-flex items-center text-[10px] font-mono tracking-widest text-[#687481] px-2 py-0.5 rounded border border-white/5 bg-white/[0.02]">
+              AUTO
+            </span>
+<!-- Submit Action Button -->
+<button aria-label="Enviar comando" class="w-9 h-9 rounded-full bg-[#F2F6FA] text-[#05070A] hover:bg-white flex items-center justify-center transition-all duration-200 flex-shrink-0 shadow-[0_0_12px_rgba(242,246,250,0.3)]" type="button">
+<svg class="w-4 h-4 transform -rotate-45" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="19" y2="5"></line>
+<polyline points="5 12 12 5 19 12"></polyline>
+</svg>
+</button>
+</div>
+</div>
+<!-- Lower Peripheral Info Modules (Music on left, Clock/Device on right) -->
+<footer class="w-full flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono" data-purpose="peripheral-modules">
+<!-- Music Card (Bottom-Left) -->
+<div class="w-full md:w-auto flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-[#161C25]/40 backdrop-blur-md subtle-border hover:bg-[#161C25]/60 transition-all" data-purpose="current-media">
+<!-- Micro Animated Soundwave Equalizer -->
+<div aria-hidden="true" class="flex items-end gap-[3px] h-4 w-4 text-[#C7D0D9] flex-shrink-0">
+<span class="w-[2px] bg-[#C7D0D9] rounded-full eq-bar-1"></span>
+<span class="w-[2px] bg-[#C7D0D9] rounded-full eq-bar-2"></span>
+<span class="w-[2px] bg-[#C7D0D9] rounded-full eq-bar-3"></span>
+<span class="w-[2px] bg-[#C7D0D9] rounded-full eq-bar-4"></span>
+</div>
+<!-- Track Metadata -->
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-sans text-[#F2F6FA] truncate font-medium">Echoes of Andromeda</span>
+<span class="text-[10px] text-[#687481] tracking-wider truncate font-sans">Lux Nova • Espacial Stems</span>
+</div>
+<!-- Subtle Media Controls -->
+<div class="flex items-center gap-1.5 ml-2 border-l border-white/5 pl-2.5">
+<button aria-label="Pausar áudio" class="p-1 text-[#687481] hover:text-[#F2F6FA] transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="16" rx="1" width="4" x="6" y="4"></rect>
+<rect height="16" rx="1" width="4" x="14" y="4"></rect>
+</svg>
+</button>
+<button aria-label="Próxima faixa" class="p-1 text-[#687481] hover:text-[#F2F6FA] transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<polygon points="5 4 15 12 5 20 5 4"></polygon>
+<line x1="19" x2="19" y1="5" y2="19"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Environmental & Device Status (Bottom-Right) -->
+<div class="w-full md:w-auto flex flex-wrap items-center justify-end gap-3" data-purpose="peripheral-devices">
+<!-- Alarm Module -->
+<div class="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#161C25]/40 backdrop-blur-md subtle-border text-[11px] text-[#8795A6]">
+<svg class="w-3.5 h-3.5 text-[#C7D0D9]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<circle cx="12" cy="13" r="8"></circle>
+<path d="M12 9v4l2 2"></path>
+</svg>
+<span class="font-sans text-[#F2F6FA] tracking-wide">06:45 AMANHÃ</span>
+<span class="text-[#687481] font-sans text-[10px]">• Despertar suave</span>
+</div>
+<!-- Device Connection Module -->
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#161C25]/40 backdrop-blur-md subtle-border text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400/70"></span>
+<span class="text-[#C7D0D9] font-sans">Orion Clock conectado</span>
+<span class="text-[10px] font-mono text-[#687481]">2ms</span>
+</div>
+</div>
+</footer>
+<!-- END: Lower Peripheral Info Modules -->
+</div>
+<!-- END: BottomDeck -->
+</div>
+<!-- END: MainContentWrapper -->
+</div>
+<!-- END: MainContainer -->
+<!-- BEGIN: Interactive Behavior Script -->
+<script data-purpose="interface-interactivity">
+    // Minimal dynamic micro-interaction for user input focus polish
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('input[type="text"]');
+      const inputContainer = input ? input.closest('div') : null;
+
+      if (input && inputContainer) {
+        input.addEventListener('focus', () => {
+          inputContainer.classList.add('border-white/30', 'bg-[#161C25]/90');
+        });
+        input.addEventListener('blur', () => {
+          inputContainer.classList.remove('border-white/30', 'bg-[#161C25]/90');
+        });
+      }
+    });
+  </script>
+<!-- END: Interactive Behavior Script -->
+</body></html>

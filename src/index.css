@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep: #05070A;
+  --color-graphite: #161C25;
+  --color-silver-dark: #687481;
+  --color-silver-light: #C7D0D9;
+  --color-cold-white: #F2F6FA;
+  --color-platinum-dim: #8795A6;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sora: 'Sora', sans-serif;
+}
+
+/* Atmospheric radial background */
+.ambient-atmosphere {
+  background: radial-gradient(circle at 50% 45%, rgba(232, 238, 245, 0.04) 0%, rgba(5, 7, 10, 0.8) 55%, #05070A 100%);
+}
+
+/* Subtle borders matching design */
+.subtle-border {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.subtle-border-light {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Soundwave equalization micro-animation */
+@keyframes equalizer {
+  0%, 100% { height: 3px; }
+  50% { height: 14px; }
+}
+
+.eq-bar-1 { animation: equalizer 1.1s ease-in-out infinite; }
+.eq-bar-2 { animation: equalizer 1.4s ease-in-out infinite 0.2s; }
+.eq-bar-3 { animation: equalizer 0.9s ease-in-out infinite 0.4s; }
+.eq-bar-4 { animation: equalizer 1.3s ease-in-out infinite 0.1s; }
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

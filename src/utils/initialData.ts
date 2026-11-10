@@ -1,0 +1,128 @@
+import { AudioTrack, AlarmItem, DeviceItem, AmbientState } from '../types/orion';
+
+export const INITIAL_TRACKS: AudioTrack[] = [
+  {
+    id: 'track-1',
+    title: 'Echoes of Andromeda',
+    artist: 'Lux Nova',
+    subtitle: 'Lux Nova • Espacial Stems',
+    durationSeconds: 272,
+    category: 'espacial',
+    description: 'Sons orbitais imersivos em escala pentatônica estelar.',
+  },
+  {
+    id: 'track-2',
+    title: 'Nebula Reverie',
+    artist: 'Orion Core',
+    subtitle: 'Orion Core • Harmônicos Celestes',
+    durationSeconds: 314,
+    category: 'espacial',
+    description: 'Camadas etéreas de sintetizadores analógicos com ressonância cósmica.',
+  },
+  {
+    id: 'track-3',
+    title: 'Deep Focus Alpha Wave (10Hz)',
+    artist: 'Neural Sync',
+    subtitle: 'Neural Sync • Estímulo Cognitivo',
+    durationSeconds: 480,
+    category: 'binaural',
+    description: 'Frequência de sincronização hemisférica cerebral para concentração profunda.',
+  },
+  {
+    id: 'track-4',
+    title: 'Nocturne Silence',
+    artist: 'Sombras de Saturno',
+    subtitle: 'Sombras de Saturno • Repouso Noturno',
+    durationSeconds: 380,
+    category: 'circadiano',
+    description: 'Tons sub-graves ultra-suaves projetados para relaxamento do nervo vago.',
+  },
+];
+
+export const INITIAL_ALARMS: AlarmItem[] = [
+  {
+    id: 'alarm-1',
+    time: '06:45',
+    label: 'Despertar suave',
+    days: ['SEG', 'TER', 'QUA', 'QUI', 'SEX'],
+    active: true,
+    gentleWake: true,
+    soundscape: 'Aurora Boreal',
+    fadeMinutes: 15,
+  },
+  {
+    id: 'alarm-2',
+    time: '22:30',
+    label: 'Preparação para o sono',
+    days: ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'],
+    active: true,
+    gentleWake: true,
+    soundscape: 'Nebula Reverie',
+    fadeMinutes: 10,
+  },
+  {
+    id: 'alarm-3',
+    time: '14:00',
+    label: 'Power Nap Revigorante',
+    days: ['TER', 'QUI'],
+    active: false,
+    gentleWake: true,
+    soundscape: 'Campânulas Zen',
+    fadeMinutes: 5,
+  },
+];
+
+export const INITIAL_DEVICES: DeviceItem[] = [
+  {
+    id: 'dev-1',
+    name: 'Orion Clock',
+    type: 'clock',
+    room: 'Quarto Master',
+    connected: true,
+    latencyMs: 2,
+    batteryPct: 100,
+    tempCelsius: 24.2,
+    humidityPct: 48,
+    lastActive: 'Agora',
+  },
+  {
+    id: 'dev-2',
+    name: 'Orion Sphere',
+    type: 'sphere',
+    room: 'Sala de Estar',
+    connected: true,
+    latencyMs: 3.8,
+    batteryPct: 92,
+    lightBrightness: 42,
+    lastActive: 'Agora',
+  },
+  {
+    id: 'dev-3',
+    name: 'Neural Sensor Hub',
+    type: 'hub',
+    room: 'Escritório',
+    connected: true,
+    latencyMs: 1.2,
+    tempCelsius: 22.8,
+    humidityPct: 45,
+    lastActive: 'Agora',
+  },
+  {
+    id: 'dev-4',
+    name: 'Orion Buds Pro',
+    type: 'audio',
+    room: 'Móvel',
+    connected: true,
+    latencyMs: 8,
+    batteryPct: 98,
+    lastActive: 'Standby no estojo',
+  },
+];
+
+export const INITIAL_AMBIENT: AmbientState = {
+  colorTempK: 2700,
+  brightnessPct: 35,
+  circadianSync: true,
+  soundMaskingType: 'pink_noise',
+  volumePct: 65,
+};
